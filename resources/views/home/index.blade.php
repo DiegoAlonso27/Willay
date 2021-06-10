@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slider />
-    <div class="container py-4">
+    {{-- <div class="container py-4">
         <div class="mb-10 mt-8">
             <a role="button" class=" text-xl bg-red-600 hover:bg-red-700 text-white px-8 py-4  border rounded-full">
                 Publicaciones
@@ -30,210 +30,82 @@
     <div class="flex justify-center border-t-2 border-b-2 border-red-600 py-2 mb-8 mx-auto">
         <a class="font-bold text-black text-base hover:text-gray-600 md:text-xl lg:text-2xl"
             href="{{ route('posts.index') }}">VER MÁS</a>
-    </div>
+    </div> --}}
     <div class="container py-4">
         <div class="mb-10 mt-8">
             <a role="button" class=" text-xl bg-red-600 hover:bg-red-700 text-white px-8 py-4  border rounded-full">
-                Noticias Recientes
+                Novedades
             </a>
         </div>
         <div class="my-4">
             <div class="md:flex mt-8 md:-mx-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    @foreach ($reports as $report)
-                        <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center"
-                            style="background-image: url('{{ Storage::url($report->image->url) }}')">
-                            <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                                <div class="px-10 max-w-xl">
-                                    <h2 class="text-2xl text-white font-semibold">{{ $report->name }}</h2>
-                                    <a class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none"
-                                        href="{{ route('reports.show', $report) }}">
-                                        <span>Ver completo</span>
-                                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <x-view-card titulo="SOLIDARIDAD Y ENSEÑANZA QUE MEJORAN LA EDUCACIÓN"
+                        link="{{ route('posts.show') }}" img="/img/unnamed.jpg" />
+                    <x-view-card titulo="Planetastico, un libro que desarrolla conciencia ambiental"
+                        link="{{ route('posts.show2') }}" img="/img/conciencia-ambienta-823x400.jpg" />
+                    <x-view-card titulo="CORDELIA SÁNCHEZ, UNA VOZ QUE PIDE INFORMACIÓN PARA TODOS"
+                        link="{{ route('posts.show3') }}" img="/img/microfono_0.jpg" />
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="flex justify-center border-t-2 border-b-2 border-red-600 py-2 mb-8 mx-auto">
+        <a class="font-bold text-black text-base hover:text-gray-600 md:text-xl lg:text-2xl"
+            href="{{ route('posts.index') }}">VER MÁS</a>
+    </div>
+    <div class="bg-gray-500">
+        <div class="container py-4 ">
+            <form class="w-full  px-8 pt-6 pb-4 mb-2">
+                <div class="mb-4">
+                    <input
+                        class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                        id="emailaddress" type="email" placeholder="ejemplo@email.com">
+                </div>
+
+                <div class="flex items-center justify-between pt-4">
+                    <button
+                        class="text-xl bg-gradient-to-r from-red-700 to-red-300 hover:from-red-900 hover:to-red-400 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                        type="submit">
+                        RECIBIR NOTICIAS
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
     <div class="container py-4">
         <div class="mb-10 mt-8">
             <a role="button" class=" text-xl bg-red-600 hover:bg-red-700 text-white px-8 py-4  border rounded-full">
-                Fundadores
+                YOUTUBE
             </a>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
-
-            <div class="flex items-center h-full w-full justify-center">
-
-                <div class="bg-white shadow-xl rounded-lg py-3">
-                    <div class="photo-wrapper p-2">
-                        <img class="w-32 h-32 rounded-full mx-auto"
-                            src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                            alt="John Doe">
-                    </div>
-                    <div class="p-2">
-                        <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
-                        <div class="text-center text-gray-400 text-xs font-semibold">
-                            <p>Web Developer</p>
-                        </div>
-                        <table class="text-xs my-3 hidden lg:block">
-                            <tbody>
-                                <tr>
-                                    <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
-                                    <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                    <td class="px-2 py-2">+977 9955221114</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                    <td class="px-2 py-2">john@exmaple.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="text-center my-3">
-                            <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                                href="#">View Profile</a>
-                        </div>
-
-                    </div>
+        <div class="my-4">
+            <div class="md:flex mt-8 md:-mx-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <x-view-card titulo="Podcast Aldrish Gálvez, creador del Libro Planetastico" link="#"
+                        img="/img/PODCAST ALDRISH GÁLVEZ.jpg" />
+                    <x-view-card titulo="Entrevista a Sadhami, voluntaria de la Enséñame"
+                        link="{{ route('interviews.show2') }}" img="/img/ENTREVISTA SADHAMI CARAZA.jpg" />
+                    <x-view-card titulo="Entrevista a Roxana Quispe Collantes" link="{{ route('interviews.show') }}"
+                        img="/img/ENTREVISTA A ROXANA QUISPE COLLANTES.jpg" />
                 </div>
-
             </div>
-            <div class="flex items-center h-full w-full justify-center">
-
-                <div class="max-w-xs">
-                    <div class="bg-white shadow-xl rounded-lg py-3">
-                        <div class="photo-wrapper p-2">
-                            <img class="w-32 h-32 rounded-full mx-auto"
-                                src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                alt="John Doe">
-                        </div>
-                        <div class="p-2">
-                            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
-                            <div class="text-center text-gray-400 text-xs font-semibold">
-                                <p>Web Developer</p>
-                            </div>
-                            <table class="text-xs my-3 hidden lg:block">
-                                <tbody>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
-                                        <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                        <td class="px-2 py-2">+977 9955221114</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                        <td class="px-2 py-2">john@exmaple.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="text-center my-3">
-                                <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                                    href="#">View Profile</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex items-center h-full w-full justify-center">
-
-                <div class="max-w-xs">
-                    <div class="bg-white shadow-xl rounded-lg py-3">
-                        <div class="photo-wrapper p-2">
-                            <img class="w-32 h-32 rounded-full mx-auto"
-                                src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                alt="John Doe">
-                        </div>
-                        <div class="p-2">
-                            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
-                            <div class="text-center text-gray-400 text-xs font-semibold">
-                                <p>Web Developer</p>
-                            </div>
-                            <table class="text-xs my-3 hidden lg:block">
-                                <tbody>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
-                                        <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                        <td class="px-2 py-2">+977 9955221114</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                        <td class="px-2 py-2">john@exmaple.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="text-center my-3">
-                                <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                                    href="#">View Profile</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex items-center h-full w-full justify-center">
-
-                <div class="max-w-xs">
-                    <div class="bg-white shadow-xl rounded-lg py-3">
-                        <div class="photo-wrapper p-2">
-                            <img class="w-32 h-32 rounded-full mx-auto"
-                                src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-                                alt="John Doe">
-                        </div>
-                        <div class="p-2">
-                            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">Joh Doe</h3>
-                            <div class="text-center text-gray-400 text-xs font-semibold">
-                                <p>Web Developer</p>
-                            </div>
-                            <table class="text-xs my-3 hidden lg:block">
-                                <tbody>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Address</td>
-                                        <td class="px-2 py-2">Chatakpur-3, Dhangadhi Kailali</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
-                                        <td class="px-2 py-2">+977 9955221114</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
-                                        <td class="px-2 py-2">john@exmaple.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="text-center my-3">
-                                <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-                                    href="#">View Profile</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+        </div>
+        <div class="mb-4 mt-8">
+            <a role="button" href="https://www.youtube.com/channel/UC5S3pJ0DgcbJv0ezM2erXxA/videos" target="_blank"
+                class="flex justify-center m-auto text-xl bg-red-600 hover:bg-red-700 text-white px-8 py-4  border rounded-full">
+                VISITA NUESTRO CANAL
+            </a>
+        </div>
+    </div>
+    <div class="container pb-8">
+        <div class="mb-10 mt-4">
+            <a role="button" class=" text-xl bg-red-600 hover:bg-red-700 text-white px-8 py-4  border rounded-full">
+                COMIC DEL MES
+            </a>
+        </div>
+        <div class="w-full h-32 md:h-56 lg:h-80">
+            <img class="w-full h-full md:mx-4 rounded-md overflow-hidden object-cover object-center bg-gray-500 shadow appearance-none leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out flex items-center mt-4 text-sm uppercase font-medium hover:underline focus:outline-none" src="/img/comic-min.jpg" alt="">
         </div>
     </div>
 </x-app-layout>
