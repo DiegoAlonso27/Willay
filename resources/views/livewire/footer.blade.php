@@ -20,18 +20,23 @@
                     <span class="my-2"><a href="{{ route('home.index') }}"
                             class="text-red-700 text-md hover:text-red-500"><i class="fas fa-laptop-house"></i>
                             Home</a></span></br>
-                    <span class="my-2"><a href="{{ route('podcasts.index') }}"
+                    <span class="my-2"><a href="{{ route('posts.index2') }}"
                             class="text-red-700  text-md hover:text-red-500"><i class="far fa-play-circle"></i>
-                            Podcast</a></span></br>
+                            Principales</a></span></br>
                     <span class="my-2"><a href="{{ route('abouts.index') }}"
                             class="text-red-700  text-md hover:text-red-500"><i class="fas fa-user-friends"></i> Sobre
                             Nosotros</a></span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2"></span></br>
+                    <span class=""><a href="{{ route('home.index') }}"
+                            class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
+                            Especiales</a></span>
                     <span class="my-2"><a href="{{ route('posts.index') }}"
+                            class="text-red-700  text-md hover:text-red-500"><i class="far fa-play-circle"></i></i>
+                            Cronicas</a></span></br>
+                    <span class="my-2"><a href="{{ route('podcasts.index') }}"
                             class="text-red-700  text-md hover:text-red-500"><i class="fas fa-blog"></i>
-                            Blog</a></span></br>
+                            Podcast</a></span></br>
                     <span class="my-2"><a href="{{ route('interviews.index') }}"
                             class="text-red-700  text-md hover:text-red-500"><i class="fas fa-microphone-alt"></i>
                             Entrevistas</a></span>

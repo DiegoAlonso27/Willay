@@ -19,6 +19,10 @@ class HomeController extends Controller
     {
         return view('posts.index');
     }
+    public function index_post2()
+    {
+        return view('posts.index2');
+    }
     public function show_post1()
     {
         return view('posts.show');
@@ -30,6 +34,11 @@ class HomeController extends Controller
     public function show_post3()
     {
         return view('posts.show3');
+    }
+
+    public function show_post4()
+    {
+        return view('posts.show4');
     }
 
     public function index_interview()
@@ -51,6 +60,10 @@ class HomeController extends Controller
     public function show_interview4()
     {
         return view('interviews.show4');
+    }
+    public function show_interview5()
+    {
+        return view('interviews.show5');
     }
 
 
@@ -76,5 +89,10 @@ class HomeController extends Controller
     public function index_about()
     {
         return view('abouts.index');
+    }
+
+    public function index_report()
+    {
+        return view('reports.index');
     }
 }

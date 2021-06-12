@@ -13,7 +13,7 @@
                 <b class="text-xl">Autor: Tapia Torrealva, Franshesca</b></br>
                 <figure>
                     <iframe class="w-full h-80 object-cover object-center my-6 rounded-md"
-                        src="https://www.youtube.com/embed/ez026IOWzx0" title="YouTube video player" frameborder="0"
+                        src="https://www.youtube.com/embed/wwWRqbroUxA" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </figure>

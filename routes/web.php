@@ -19,11 +19,15 @@ Route::get('/', HomeController::class)->name('home.index');
 
 Route::get('posts', [HomeController::class, 'index_post'])->name('posts.index');
 
+Route::get('posts/principales', [HomeController::class, 'index_post2'])->name('posts.index2');
+
 Route::get('posts/1', [HomeController::class, 'show_post1'])->name('posts.show');
 
 Route::get('posts/2', [HomeController::class, 'show_post2'])->name('posts.show2');
 
 Route::get('posts/3', [HomeController::class, 'show_post3'])->name('posts.show3');
+
+Route::get('posts/4', [HomeController::class, 'show_post4'])->name('posts.show4');
 
 Route::get('interviews', [HomeController::class, 'index_interview'])->name('interviews.index');
 
@@ -35,6 +39,8 @@ Route::get('interviews/3', [HomeController::class, 'show_interview3'])->name('in
 
 Route::get('interviews/4', [HomeController::class, 'show_interview4'])->name('interviews.show4');
 
+Route::get('interviews/5', [HomeController::class, 'show_interview5'])->name('interviews.show5');
+
 Route::get('podcasts', [HomeController::class, 'index_podcast'])->name('podcasts.index');
 
 Route::get('podcasts/1', [HomeController::class, 'show_podcast1'])->name('podcasts.show');
@@ -44,6 +50,8 @@ Route::get('podcasts/2', [HomeController::class, 'show_podcast2'])->name('podcas
 Route::get('podcasts/3', [HomeController::class, 'show_podcast3'])->name('podcasts.show3');
 
 Route::get('abouts', [HomeController::class, 'index_about'])->name('abouts.index');
+
+Route::get('reports', [HomeController::class, 'index_report'])->name('reports.index');
 
 /* Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 

@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-100 py-3 md:justify-start md:space-x-10">
             <div class="flex justify-start lg:w-0 lg:flex-1">
-                <a href="#">
+                <a href="{{ route('home.index') }}">
                     <span class="sr-only">Workflow</span>
                     <img class="block lg:hidden h-16 w-auto" src="/img/logo-4.svg" alt="Workflow">
                     <img class="hidden lg:block h-20 w-auto" src="/img/logo-3.svg" alt="Workflow">
@@ -24,21 +24,22 @@
             <nav class="hidden md:flex space-x-10">
 
                 <a href="{{ route('home.index') }}" class="text-base font-medium text-gray-500 hover:text-red-900">
-                    <i class="fas fa-laptop-house"></i> Home
+                    <i class="fas fa-laptop-house"></i> Inicio
                 </a>
                 <a href="{{ route('abouts.index') }}" class="text-base font-medium text-gray-500 hover:text-red-900">
                     <i class="fas fa-user-friends"></i> Sobre Nosotros</a>
-                <a href="{{ route('posts.index') }}" class="text-base font-medium text-gray-500 hover:text-red-900">
-                    <i class="fas fa-blog"></i> Blog</a>
-                <a href="{{ route('podcasts.index') }}"
+                <a href="{{ route('posts.index2') }}" class="text-base font-medium text-gray-500 hover:text-red-900">
+                    <i class="fas fa-blog"></i> Principal</a>
+                {{-- <a href="{{ route('podcasts.index') }}"
                     class="text-base font-medium text-gray-500 hover:text-red-900">
-                    <i class="far fa-play-circle"></i> Podcast </a>
+                    <i class="far fa-play-circle"></i> Podcast </a> --}}
                 <div class="relative" x-data="{ open:false }">
                     <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
                     <button type="button" x-on:click="open = !open"
                         class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                         aria-expanded="false">
-                        <span><i class="fas fa-microphone-alt"></i> Entrevistas</span>
+                        <span>{{-- <i class="fas fa-microphone-alt"></i> --}} <i class="far fa-play-circle"></i>
+                             Especiales</span>
                         <!--
                 Heroicon name: solid/chevron-down
 
@@ -58,7 +59,7 @@
 
                         <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="{{ route('podcasts.index') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: outline/support -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -67,13 +68,13 @@
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Especialistas
+                                            Podcats
                                         </p>
                                     </div>
                                 </a>
                             </div>
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="{{ route('posts.index') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: outline/support -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -82,13 +83,13 @@
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Influencers
+                                            Cronicas
                                         </p>
                                     </div>
                                 </a>
                             </div>
                             <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="#" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <a href="{{ route('interviews.index') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                     <!-- Heroicon name: outline/support -->
                                     <svg class="flex-shrink-0 h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -97,16 +98,16 @@
                                     </svg>
                                     <div class="ml-4">
                                         <p class="text-base font-medium text-gray-900">
-                                            Casos
+                                            Entrevistas
                                         </p>
                                     </div>
                                 </a>
                             </div>
                             <div class="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                                 <div class="mt-5 text-sm">
-                                    <a href="{{ route('interviews.index') }}"
+                                    <a href="{{ route('reports.index') }}"
                                         class="font-medium text-red-600 hover:text-red-500"> Ver todos las
-                                        Entrevistas
+                                        Especiales
                                         <span aria-hidden="true">&rarr;</span></a>
                                 </div>
                             </div>
@@ -212,22 +213,23 @@
                             </span>
                         </a>
 
-                        <a href="{{ route('podcasts.index') }}"
+                        {{-- <a href="{{ route('podcasts.index') }}"
                             class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <span class="ml-3 text-base font-medium text-gray-900">
                                 <i class="fas fa-laptop flex-shrink-0 h-6 w-6 text-red-600"></i> Podcast
                             </span>
-                        </a>
-                        <a href="{{ route('posts.index') }}"
+                        </a> --}}
+
+                        <a href="{{ route('posts.index2') }}"
                             class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <span class="ml-3 text-base font-medium text-gray-900">
-                                <i class="fas fa-blog flex-shrink-0 h-6 w-6 text-red-600"></i> Blog
+                                <i class="fas fa-blog flex-shrink-0 h-6 w-6 text-red-600"></i> Principales
                             </span>
                         </a>
-                        <a href="{{ route('interviews.index') }}"
+                        <a href="{{ route('reports.index') }}"
                             class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                             <span class="ml-3 text-base font-medium text-gray-900">
-                                <i class="fas fa-microphone-alt flex-shrink-0 h-6 w-6 text-red-600"></i> Entrevistas
+                                <i class="far fa-play-circle flex-shrink-0 h-6 w-6 text-red-600"></i> Especiales
                             </span>
                         </a>
                     </nav>
@@ -235,14 +237,14 @@
             </div>
             <div class="py-6 px-5 space-y-6">
                 <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-                    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
-                        Especialistas
+                    <a href="{{ route('podcasts.index') }}" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
+                        Podcast
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
-                        Influencers
+                    <a href="{{ route('posts.index') }}" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
+                        Cronicas
                     </a>
-                    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
-                        Casos
+                    <a href="{{ route('interviews.index') }}" class="text-base font-medium text-gray-900 hover:text-gray-700 hover:bg-gray-100">
+                        Entrevistas
                     </a>
                 </div>
                 @auth

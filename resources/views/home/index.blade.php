@@ -52,7 +52,7 @@
     </div>
     <div class="flex justify-center border-t-2 border-b-2 border-red-600 py-2 mb-8 mx-auto">
         <a class="font-bold text-black text-base hover:text-gray-600 md:text-xl lg:text-2xl"
-            href="{{ route('posts.index') }}">VER MÁS</a>
+            href="{{ route('reports.index') }}">VER MÁS</a>
     </div>
     <div class="bg-gray-500">
         <div class="container py-4 ">
